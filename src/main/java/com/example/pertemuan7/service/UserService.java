@@ -16,4 +16,9 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-   
+    public User addUser(User request) {
+        request.setId(UUID.randomUUID().toString());
+        return userRepository.save(request);
+    }
+
+    
